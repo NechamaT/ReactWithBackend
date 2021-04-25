@@ -38,14 +38,14 @@ namespace PeopleReact.Web.Controllers
         }
 
         
-        [Route("Edit")]
+        [Route("Update")]
         public void Update(Person person)
         {
             var repo = new PeopleRepository(_connectionString);
             repo.Edit(person);
         }
 
- 
+        [HttpPost]
         [Route("Delete")]
         public void Delete(Person person)
         {

@@ -39,6 +39,7 @@ namespace PeopleReact.Data
         public void Delete(Person person)
         {
             using var ctx = new PeopleDbContext(_connectionString);
+            ctx.Database.ExecuteSqlInterpolated($"DELETE FROM People WHERE Id = {person.Id}");
         }
     }
 }
